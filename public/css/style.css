@@ -1,0 +1,151 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+:root{
+    --bounce-color: #d32a8d;
+    --image-size: 400px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body, html {
+	background: WhiteSmoke;
+	font-family: 'Ubuntu', sans-serif;
+	color: #0f383e;
+	text-align: center;
+	overflow: hidden;
+}
+    
+.holder {
+    width: 100%;
+    /*height: 100vh;*/
+    text-align: center;
+    margin-top: 5rem;
+}
+	
+.avatar {
+	margin: 2rem;			
+
+}
+
+
+h1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 0.95rem;
+}
+
+
+
+img.user {
+    height: var(--image-size);
+    width: var(--image-size);
+    background-color: var(--bounce-color) ;
+    box-shadow: 0 0 0 5px var(--bounce-color);
+    border-radius: 50%;
+}
+
+img.user:hover {
+	cursor: pointer; 
+	animation:bounceOut .4s linear;
+}
+
+
+@keyframes bounceOut {
+        0%{ box-shadow: 0 0 0 4px var(--bounce-color); opacity:1;}
+        25% { box-shadow: 0 0 0 1px var(--bounce-color); opacity:1;}
+        50%{ box-shadow: 0 0 0 7px var(--bounce-color); opacity:1; }
+        75%{ box-shadow: 0 0 0 4px var(--bounce-color); opacity:1;}
+        100%{ box-shadow: 0 0 0 5px var(--bounce-color); opacity:1;}
+}
+
+.form-control {
+    margin: 1rem 0;
+}
+
+.form-control label,
+.form-control input,
+.form-control textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.25rem;
+    text-align: left;
+}
+
+.form-control input,
+.form-control textarea {
+    border: 1px solid #a1a1a1;
+    font: inherit;
+    border-radius: 5px;
+    resize: none;
+    padding: 5px;
+}
+
+.form-control input:focus {
+    outline-color: #002a69;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    text-decoration: none;
+    font: inherit;
+    border: 1px solid #002a69;
+    color: #002a69;
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #002a69;
+    color: white;
+}
+
+
+section.popup {
+    background: #ededed;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.popup-inner {
+    position:relative;
+    width: 600px;
+    height: 400px;
+    padding: 10px;
+    border: 2px solid rgba(0, 54, 128, 0.4);
+    border-radius: 7px;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup-close {
+    position:absolute;
+    z-index:999;
+    top:5px;
+    right:10px;
+    color:#000;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.employee-form {
+    width: 400px;
+    margin: auto;
+}

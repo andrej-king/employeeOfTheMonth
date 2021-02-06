@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+</head>
+<body>
+<%
+let localEmployee = {};
+if (typeof employeeOfMonth !== 'undefined') {
+	localEmployee = {
+        name: employeeOfMonth[0].name,
+        achievement: employeeOfMonth[0].achievement,
+        imgUrl: employeeOfMonth[0].imgUrl
+    }
+} else {
+    localEmployee = {
+        name: "",
+        achievement: "",
+        imgUrl: "/images/employeeIcon.jpg"
+    }
+}
+
+ %>
+    <div class="holder">
+        <h1>Employee of the month</h1>
+        <div class="avatar">
+            <a href="#">
+                <img src="<%= localEmployee.imgUrl %>" class="user"/>
+            </a>
+        </div>
+        <p>name</p>
+        <h1><%= localEmployee.name %></h1>
+        <p>achievement</p>
+        <h1><%= localEmployee.achievement %></h1>
+    </div>
+
+<section class="popup">
+    <div class="popup-inner">
+        <div class="popup-close">x</div>
+        <h1>Edit employee of the month</h1>
+        <form class="employee-form" action="/" method="POST">
+            <div class="form-control">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" value="<%= localEmployee.name %>" required="required">
+            </div>
+            <div class="form-control">
+                <label for="imgUrl">Image URL</label>
+                <input type="text" name="imgUrl" id="imgUrl" value="<%= localEmployee.imgUrl %>" required="required">
+            </div>
+            <div class="form-control">
+                <label for="achievement">Achievement</label>
+                <textarea name="achievement" id="achievement" rows="5" required="required"><%= localEmployee.achievement %></textarea>
+            </div>
+
+            <button class="btn align-center" type="submit">Update</button>
+        </form>
+    </div>
+</section>
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
